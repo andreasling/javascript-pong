@@ -1,8 +1,8 @@
-body { background-color: black; color: #AAA; font-size: 12pt; padding: 1em; }
+body { background-color: black; color: #AAA; font-size: 18pt; font-family: Consolas,monospace; padding: 0; margin: 0;}
 
 #unsupported { border: 1px solid yellow; color: black; background-color: #FFFFAD; padding: 2em; margin: 1em; display: inline-block; }
 
-#sidebar                        { width: 18em; height: 40em; float: left; font-size: 0.825em; background-color: #333; border: 1px solid white; padding: 1em;  }
+#sidebar                        { width: 28em; height: 40em; float: left; font-size: 0.825em; background-color: black; padding: 0;  }
 #sidebar h2                     { color: white; text-align: center; margin: 0; }
 #sidebar .parts                 { padding-left: 1em; list-style-type: none; margin-bottom: 2em; text-align: right; }
 #sidebar .parts li a            { color: white; text-decoration: none; }
@@ -40,5 +40,14 @@ body { background-color: black; color: #AAA; font-size: 12pt; padding: 1em; }
 }
 
 @media screen and (min-width: 1600px) {
-  #game    { width: 1024px; height: 768px; }
+  #game    { width: 1280px; height: 960px; }
+}
+
+canvas { 
+  image-rendering: optimizeSpeed;             /*                     */
+  image-rendering: -moz-crisp-edges;          /* Firefox             */
+  image-rendering: -o-crisp-edges;            /* Opera               */
+  image-rendering: -webkit-optimize-contrast; /* Chrome (and Safari) */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed       */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
 }

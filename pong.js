@@ -71,6 +71,9 @@ Pong = {
       this.sounds      = Object.construct(Pong.Sounds, this);
       this.runner.start();
     }.bind(this));
+
+    var scope = this;
+    setTimeout(function() { scope.start(0); }, 15000);
   },
 
   startDemo:         function() { this.start(0); },
@@ -79,6 +82,7 @@ Pong = {
 
   start: function(numPlayers) {
     if (!this.playing) {
+      this.numPlayers = numPlayers;
       this.scores = [0, 0];
       this.playing = true;
       this.leftPaddle.setAuto(numPlayers < 1, this.level(0));
@@ -95,6 +99,11 @@ Pong = {
         this.leftPaddle.setAuto(false);
         this.rightPaddle.setAuto(false);
         this.runner.showCursor();
+      }
+
+      if (!this.numPlayers) {
+        var scope = this;
+        setTimeout(function() { scope.start(0); }, 15000);
       }
     }
   },
